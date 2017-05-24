@@ -30,10 +30,10 @@ public class GeneralLoggingAspect {
 	        	StopWatch stopWatch = new StopWatch();		       	
 	            doLog("INFO", "Entered Method {} with arguments {} ", signature, arguments);
 	        	stopWatch.start(); 
-	            result = jp.proceed();
+	            result = jp.proceed().toString();	    
 	            stopWatch.stop();            
-	            doLog("INFO", "Exited method {} Total execution time is**{} milliseconds** and result returned is {}", signature," "+stopWatch.getTotalTimeMillis()," " ,result);
-	           
+	            doLog("INFO", "Exited method {} Total execution time is**{} milliseconds** and result returned is {}", signature," "+stopWatch.getTotalTimeMillis(),result);
+	      
 	        } catch (Exception e) {
 	            log.error("[Exception at] {}{} exception={}", signature, arguments, e);
 	            throw e;

@@ -10,7 +10,23 @@ public class Sample {
 	
 
 	
-	public void doStuff()
+	public String doStuff()
+	{
+		try {
+			TimeUnit.MILLISECONDS.sleep(2);			
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("do Stuff console");
+		return "Hi";
+	
+		
+	}
+
+	
+	public void newdoStuff()
 	{
 		try {
 			TimeUnit.MILLISECONDS.sleep(2);
@@ -18,9 +34,8 @@ public class Sample {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("do Stuff console");
+		System.out.println("new do Stuff console");
 	
 		
 	}
-
 }

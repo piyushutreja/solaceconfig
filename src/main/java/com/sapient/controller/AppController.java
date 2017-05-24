@@ -21,11 +21,11 @@ public class AppController<T> {
 	private Sample sample;
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public ResponseEntity<List<T>> getAll() {
+	public String getAll() {
 		
 		sample.doStuff();
 		
-		return null;
+		return "Hi2";
 
 	}
 
