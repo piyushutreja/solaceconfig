@@ -18,6 +18,8 @@ import org.springframework.util.StopWatch;
 public class GeneralLoggingAspect {
 	
 	private final Logger log = LoggerFactory.getLogger(getClass());
+	
+
 
 
 	@Around("execution(* com.sapient..*(..))")
@@ -33,7 +35,7 @@ public class GeneralLoggingAspect {
 	            result = jp.proceed().toString();	    
 	            stopWatch.stop();            
 	            doLog("INFO", "Exited method {} Total execution time is**{} milliseconds** and result returned is {}", signature," "+stopWatch.getTotalTimeMillis(),result);
-	      
+	            
 	        } catch (Exception e) {
 	            log.error("[Exception at] {}{} exception={}", signature, arguments, e);
 	            throw e;
