@@ -2,7 +2,10 @@ package com.sapient.controller;
 
 import java.util.List;
 
+import javax.naming.InitialContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,20 +14,39 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.sapient.controller.services.Sample;
+
+import com.sapient.jms.CometSolaceProperties;
 
 @RestController
 public class AppController<T> {
 	
 	
+	
 	@Autowired
-	private Sample sample;
+	private Environment env;
+	
+	@Autowired
+	private CometSolaceProperties prop;
+
+	
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public String getAll() {
-		
-		sample.doStuff();
-		
+	public String getAll() throws Exception {		
+
+
+/*		InitialContext cxt = new InitialContext();
+
+		if (cxt == null) {
+			throw new Exception("Issue in JNDI ocntext");
+		}
+
+		Object obj =  cxt.lookup("JNDI/CF/spring");
+		if(obj==null)
+		{
+			System.out.println("jNDI NOT FOUND");
+		}
+		*/
+		System.out.println(env.getProperty("comet.solace.jms.session-comet-size")+"SessionSize"+prop.getSessionSize());
 		return "Hi2";
 
 	}

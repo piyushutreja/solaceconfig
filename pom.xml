@@ -83,6 +83,9 @@
 			<artifactId>log4j-jcl</artifactId>
 		</dependency>
 
+		<!-- jms dependency -->
+		<!-- <dependency> <groupId>com.solace.labs.spring.boot</groupId> <artifactId>solace-jms-spring-boot-starter</artifactId> 
+			<version>0.1.2</version> </dependency> -->
 
 		<!-- sl4j dependencies -->
 		<dependency>
@@ -105,6 +108,44 @@
 			<scope>test</scope>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- <dependency> <groupId>com.solacesystems</groupId> <artifactId>sol-jms</artifactId> 
+			<version>10.0.1</version> <optional>true</optional> </dependency> -->
+
+
+		<dependency>
+			<groupId>com.solacesystems</groupId>
+			<artifactId>sol-jcsmp</artifactId>
+			<version>10.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.solacesystems</groupId>
+			<artifactId>sol-jms</artifactId>
+			<version>10.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.solacesystems</groupId>
+			<artifactId>sol-common</artifactId>
+			<version>10.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
