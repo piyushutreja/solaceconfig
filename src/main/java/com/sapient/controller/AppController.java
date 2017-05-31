@@ -34,18 +34,6 @@ public class AppController<T> {
 	public String getAll() throws Exception {		
 
 
-/*		InitialContext cxt = new InitialContext();
-
-		if (cxt == null) {
-			throw new Exception("Issue in JNDI ocntext");
-		}
-
-		Object obj =  cxt.lookup("JNDI/CF/spring");
-		if(obj==null)
-		{
-			System.out.println("jNDI NOT FOUND");
-		}
-		*/
 		System.out.println(env.getProperty("comet.solace.jms.session-comet-size")+"SessionSize"+prop.getSessionSize());
 		return "Hi2";
 

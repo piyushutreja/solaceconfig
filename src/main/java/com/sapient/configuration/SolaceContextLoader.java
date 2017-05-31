@@ -92,9 +92,9 @@ public class SolaceContextLoader {
 	    jndiprops.setProperty(InitialContext.PROVIDER_URL, prop.getProviderURL());
 	    jndiprops.setProperty(Context.SECURITY_PRINCIPAL, prop.getSecurityPrincipal());
 	    jndiprops.setProperty(Context.SECURITY_CREDENTIALS,prop.getCredential());
-	    //jndiprops.setProperty(SupportedProperty.SOLACE_JMS_SSL_TRUST_STORE_FORMAT, prop.getTrustStoreFormat());
-	   // jndiprops.setProperty(SupportedProperty.SOLACE_JMS_SSL_TRUST_STORE, prop.getTrustStore());
-	   // jndiprops.setProperty(SupportedProperty.SOLACE_JMS_SSL_TRUST_STORE_PASSWORD, prop.getStorePasssword());
+	    jndiprops.setProperty(SupportedProperty.SOLACE_JMS_SSL_TRUST_STORE_FORMAT, prop.getTrustStoreFormat());
+	    jndiprops.setProperty(SupportedProperty.SOLACE_JMS_SSL_TRUST_STORE, prop.getTrustStore());
+	    jndiprops.setProperty(SupportedProperty.SOLACE_JMS_SSL_TRUST_STORE_PASSWORD, prop.getStorePasssword());
 	    jndiTemplate.setEnvironment(jndiprops);
 	    return jndiTemplate;
 		
